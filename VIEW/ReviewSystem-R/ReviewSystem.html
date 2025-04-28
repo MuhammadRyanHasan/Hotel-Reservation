@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Review System</title>
+</head>
+<body>
+    <h2>Submit a Review</h2>
+    <form onsubmit="return submitReview()">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label>Rating:</label><br>
+        <input type="radio" name="rating" value="1"> 1
+        <input type="radio" name="rating" value="2"> 2
+        <input type="radio" name="rating" value="3"> 3
+        <input type="radio" name="rating" value="4"> 4
+        <input type="radio" name="rating" value="5"> 5<br><br>
+        
+        <label for="comment">Comment:</label><br>
+        <textarea id="comment" name="comment" rows="4" cols="50" required></textarea><br><br>
+        
+        <label for="traveler-type-input">Traveler Type:</label>
+        <select id="traveler-type-input" name="traveler-type">
+            <option value="Solo">Solo</option>
+            <option value="Couple">Couple</option>
+            <option value="Family">Family</option>
+            <option value="Business">Business</option>
+        </select><br><br>
+        
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <h2>Filter Reviews</h2>
+    <label for="traveler-type">Traveler Type:</label>
+    <select id="traveler-type">
+        <option value="All">All</option>
+        <option value="Solo">Solo</option>
+        <option value="Couple">Couple</option>
+        <option value="Family">Family</option>
+        <option value="Business">Business</option>
+    </select>
+    <button onclick="displayReviews()">Apply Filter</button>
+
+    <h2>Reviews</h2>
+    <div id="review-list">
+    </div>
+    <script src="C:\xampp\htdocs\Hotel-Reservation\JS\ReviewSystem-R\ReviewSystem.js"></script>
+</body>
+</html>
