@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e6f4fd;
+  color: #003366;
+}
+
+#header {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  border-bottom: 1px solid #b3e0ff;
+}
+
+#logo {
+  color: #3399ff;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#nav-links {
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-links a {
+  color: #003366;
+  padding: 6px 16px;
+  border-radius: 18px;
+  font-weight: 600;
+}
+
+#hero {
+  background: #3399ff;
+  color: #fff;
+  text-align: center;
+  padding: 60px 12px 40px 12px;
+}
+
+#hero h1 {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+#hero p {
+  font-size: 17px;
+  margin-bottom: 22px;
+}
+
+#hero a {
+  background: #fff;
+  color: #3399ff;
+  padding: 10px 28px;
+  border-radius: 22px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+section {
+  background: #fff;
+  margin: 30px auto;
+  padding: 22px 12px;
+  max-width: 700px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+section h2 {
+  color: #3399ff;
+  margin-top: 0;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+#features > div,
+#testimonials > div {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#features > div > div,
+#testimonials > div > div {
+  background: #e6f4fd;
+  border-radius: 8px;
+  padding: 14px;
+  flex: 1 1 180px;
+  min-width: 160px;
+  box-sizing: border-box;
+}
+
+#features h3 {
+  color: #3399ff;
+  margin-top: 0;
+  font-size: 17px;
+}
+
+#testimonials p {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+#testimonials span {
+  color: #3399ff;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#about p {
+  margin: 0;
+  font-size: 16px;
+  color: #003366;
+  line-height: 1.5;
+}
+
+#signup {
+  text-align: center;
+}
+
+#signup a {
+  background: #3399ff;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 36px;
+  border-radius: 22px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 12px;
+}
+
+#footer {
+  background: #fff;
+  text-align: center;
+  padding: 14px 0;
+  color: #6699cc;
+  font-size: 14px;
+  border-top: 1px solid #b3e0ff;
+  margin-top: 30px;
+}
