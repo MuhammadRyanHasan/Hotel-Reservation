@@ -1,13 +1,13 @@
 <html>
 <head>
     <title>Review System</title>
-    <link rel="stylesheet" href="http://127.0.0.1/Hotel-Reservation/CSS/ReviewSystem-R/ReviewSystem.css">
+    <link rel="stylesheet" href="../../ASSET/CSS/ReviewSystem-R/ReviewSystem.css">
 </head>
 <body>
     <h2>Submit a Review</h2>
     <form onsubmit="return submitReview()">
         <label>Your Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
+        <input type="text" id="name" name="name" value="" required><br><br>
         <label>Rating:</label><br>
         <input type="radio" name="rating" value="1"> 1
         <input type="radio" name="rating" value="2"> 2
@@ -27,34 +27,15 @@
     </form>
     <h2>Filter Reviews</h2>
     <label>Traveler Type:</label>
-    <select id="traveler-type">
+    <select id="traveler-type" onchange="filterReviews()">
         <option value="All">All</option>
         <option value="Solo">Solo</option>
         <option value="Couple">Couple</option>
         <option value="Family">Family</option>
         <option value="Business">Business</option>
     </select>
-    <label>Status:</label>
-    <select id="status-filter">
-        <option value="All">All</option>
-        <option value="Pending">Pending</option>
-        <option value="Approved">Approved</option>
-    </select>
-    <label>Reviews per page:</label>
-    <select id="reviews-per-page">
-        <option value="5">5</option>
-        <option value="10" selected>10</option>
-        <option value="20">20</option>
-        <option value="50">50</option>
-    </select>
-    <button onclick="currentPage=1;displayReviews()">Apply Filter</button>
     <h2>Reviews</h2>
-    <div id="review-list"></div>
-    <div class="pagination" id="pagination"></div>
-    <div class="moderation-panel" id="moderation-panel">
-        <h2>Moderation Panel</h2>
-        <div id="pending-reviews"></div>
-    </div>
-    <script src="http://127.0.0.1/Hotel-Reservation/JS/ReviewSystem-R/ReviewSystem.js"></script>
+    <div id="review-output"></div>
+    <script src="../../ASSET/JS/ReviewSystem-R/ReviewSystem.js"></script>
 </body>
 </html>
