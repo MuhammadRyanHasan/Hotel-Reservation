@@ -55,10 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
       tabs[tabName].classList.add('active');
   }
   
-  // Load stay history data
+  // Load stay history data (with year filtering)
   function loadStayHistory() {
       const historyList = document.querySelector('.history-list');
-      
+      const yearFilter = document.getElementById('history-year');
+      const selectedYear = yearFilter ? yearFilter.value : 'all';
+
       // Simulated data - in a real app, this would come from an API
       const historyData = [
           {
@@ -94,22 +96,31 @@ document.addEventListener('DOMContentLoaded', function() {
               points: 1750
           }
       ];
-      
+
+      // Filter data by year if a specific year is selected
+      const filteredData = selectedYear === 'all'
+          ? historyData
+          : historyData.filter(stay => stay.date.startsWith(selectedYear));
+
       // Clear existing content
       historyList.innerHTML = '';
-      
+
       // Add history items
-      historyData.forEach(stay => {
-          const stayItem = document.createElement('div');
-          stayItem.className = 'history-item';
-          stayItem.innerHTML = `
-              <h3>${stay.hotel}</h3>
-              <p class="date">${stay.date} (${stay.nights} nights)</p>
-              <p>Room: ${stay.room}</p>
-              <p>Points earned: <strong>${stay.points}</strong></p>
-          `;
-          historyList.appendChild(stayItem);
-      });
+      if (filteredData.length === 0) {
+          historyList.innerHTML = '<p>No stays found for this year.</p>';
+      } else {
+          filteredData.forEach(stay => {
+              const stayItem = document.createElement('div');
+              stayItem.className = 'history-item';
+              stayItem.innerHTML = `
+                  <h3>${stay.hotel}</h3>
+                  <p class="date">${stay.date} (${stay.nights} nights)</p>
+                  <p>Room: ${stay.room}</p>
+                  <p>Points earned: <strong>${stay.points}</strong></p>
+              `;
+              historyList.appendChild(stayItem);
+          });
+      }
   }
   
   // Form submission for preferences
@@ -146,9 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const historyYearFilter = document.getElementById('history-year');
   if (historyYearFilter) {
       historyYearFilter.addEventListener('change', function() {
-          // In a real app, this would filter the data from the server
-          console.log('Filtering by year:', this.value);
-          // For this demo, we'll just reload the same data
           loadStayHistory();
       });
   }
