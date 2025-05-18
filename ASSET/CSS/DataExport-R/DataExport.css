@@ -1,0 +1,69 @@
+body 
+{
+    background: #e6f4fd;
+    color: #003366;
+    padding: 20px;
+}
+.container 
+{
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 22px;
+    background: #ffffff;
+    border-radius: 22px;
+}
+h1 
+{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3399ff;
+    font-size: 22px;
+}
+.export-form 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-group 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+label 
+{
+    font-weight: 600;
+    color: #003366;
+}
+select, input[type="date"] 
+{
+    padding: 12px 16px;
+    border: 1px solid #e6f4fd;
+    border-radius: 22px;
+    font-size: 16px;
+    background-color: #e6f4fd;
+    color: #003366;
+}
+.format-options 
+{
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+    justify-content: center;
+}
+.format-btn, .download-btn 
+{
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #3399ff;
+    border-radius: 22px;
+    background-color: #3399ff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white;
+    font-weight: 600;
+}
