@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f0f8ff; /* Light pastel background */
+  background: #f0f8ff; 
   margin: 0;
   padding: 20px;
 }
@@ -8,7 +8,7 @@ body {
 .container {
   max-width: 960px;
   margin: auto;
-  background: #ffffff; /* White background for the container */
+  background: #ffffff; 
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -16,7 +16,7 @@ body {
 
 h1 {
   text-align: center;
-  color: #4b6eaf; /* Pastel blue color for the header */
+  color: #4b6eaf; 
 }
 
 input[type="text"] {
@@ -24,26 +24,26 @@ input[type="text"] {
   padding: 12px;
   margin: 20px 0;
   font-size: 16px;
-  border: 2px solid #c3d2e5; /* Light border */
+  border: 2px solid #c3d2e5; 
   border-radius: 6px;
   background-color: #f9f9f9;
 }
 
 input[type="text"]:focus {
   outline: none;
-  border-color: #6a8dff; /* Focus color */
+  border-color: #6a8dff; 
   box-shadow: 0 0 5px rgba(106, 141, 255, 0.5);
 }
 
 .filters {
-  background: #f1f5fb; /* Light pastel purple for the filter panel */
+  background: #f1f5fb; 
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
 .filters h2 {
-  color: #6a8dff; /* Pastel blue for filter heading */
+  color: #6a8dff; 
   margin-bottom: 15px;
 }
 
@@ -82,14 +82,11 @@ input[type="text"]:focus {
   transition: transform 0.3s ease-in-out;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
+
 
 .card h3 {
   margin-top: 0;
-  color: #4b6eaf; /* Pastel blue for hotel names */
+  color: #4b6eaf; 
 }
 
 .card p {
