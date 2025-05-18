@@ -1,35 +1,38 @@
-body {
-    font-family: 'Arial', sans-serif;
+body 
+{
     background-color: #e6f7ff;
     margin: 0;
     padding: 20px;
-    color: #333;
 }
-h1 {
+h1 
+{
     color: #0077cc;
     text-align: center;
     margin-bottom: 30px;
 }
-#profileView, #profileEdit, #avatarChange, #passwordChange {
+#profileView, #profileEdit, #avatarChange, #passwordChange 
+{
     max-width: 600px;
     margin: 0 auto;
     background: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0, 119, 204, 0.1);
     margin-bottom: 20px;
 }
-#profileView p {
+#profileView p 
+{
     margin: 15px 0;
     font-size: 16px;
 }
-#profileImage {
+#profileImage 
+{
     border-radius: 50%;
     border: 3px solid #b3e0ff;
     display: block;
     margin: 20px auto;
 }
-button {
+button 
+{
     background-color: #4da6ff;
     color: white;
     border: none;
@@ -38,12 +41,9 @@ button {
     cursor: pointer;
     font-size: 14px;
     margin: 5px;
-    transition: background-color 0.3s;
 }
-button:hover {
-    background-color: #0077cc;
-}
-input {
+input 
+{
     display: block;
     width: 100%;
     padding: 10px;
@@ -51,43 +51,4 @@ input {
     border: 1px solid #b3e0ff;
     border-radius: 4px;
     font-size: 14px;
-}
-input:focus {
-    outline: none;
-    border-color: #4da6ff;
-    box-shadow: 0 0 5px rgba(77, 166, 255, 0.5);
-}
-#profileEdit, #avatarChange, #passwordChange {
-    display: none;
-}
-strong {
-    color: #0077cc;
-}
-.alert {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0, 119, 204, 0.2);
-    z-index: 100;
-    text-align: center;
-    border-top: 4px solid #4da6ff;
-}
-.alert.hidden {
-    display: none;
-}
-#close-alert {
-    background-color: #4da6ff;
-    color: white;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 15px;
-}
-#close-alert:hover {
-    background-color: #0077cc;
 }

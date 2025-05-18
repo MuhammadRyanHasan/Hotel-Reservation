@@ -4,11 +4,26 @@ function editProfile() {
      document.getElementById('editName').value = document.getElementById('displayName').innerText;
      document.getElementById('editEmail').value = document.getElementById('displayEmail').innerText;
  }
- function saveProfile() {
-     document.getElementById('displayName').innerText = document.getElementById('editName').value;
-     document.getElementById('displayEmail').innerText = document.getElementById('editEmail').value;
-     document.getElementById('profileEdit').style.display = 'none';
-     document.getElementById('profileView').style.display = 'block';
+ function saveProfile(){
+    const email=document.getElementById('editEmail').value;
+    function isValidEmail(email)
+    {
+    const atIndex=email.indexOf('@');
+    const dotIndex=email.lastIndexOf('.');
+    if(atIndex<=0||atIndex===email.length-1)
+        {return false;}
+    if(dotIndex<atIndex+2||dotIndex===email.length-1)
+        {return false;}
+    if(email.indexOf('@',atIndex+1)!==-1)
+        {return false;}
+    return true;
+    }
+    if(!isValidEmail(email))
+    {alert('Please enter a valid email address.');return;}
+    document.getElementById('displayName').innerText=document.getElementById('editName').value;
+    document.getElementById('displayEmail').innerText=email;
+    document.getElementById('profileEdit').style.display='none';
+    document.getElementById('profileView').style.display='block';
  }
  function cancelEdit() {
      document.getElementById('profileEdit').style.display = 'none';
