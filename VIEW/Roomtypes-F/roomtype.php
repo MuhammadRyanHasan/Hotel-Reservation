@@ -1,3 +1,11 @@
+<?php
+require_once('../../CONTROLLER/sessioncheck.php');
+echo "Welcome, " . htmlspecialchars($_SESSION['email']);
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

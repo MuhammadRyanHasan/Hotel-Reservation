@@ -1,3 +1,21 @@
+<?php
+
+
+
+require_once('../../CONTROLLER/sessioncheck.php');
+
+
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'guest') {
+    
+    echo "Access denied. Guest privileges required.";
+    exit();
+}
+
+
+echo "Welcome, " . htmlspecialchars($_SESSION['email']);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
