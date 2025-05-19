@@ -1,7 +1,15 @@
+<?php
+session_start();
+if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status'])) 
+    {
+    header('Location:../UserAuthentication-R/Login.html');
+    exit();
+    }
+?>
 <html>
 <head>
     <title>Cancellation Policy</title>
-    <link rel="stylesheet" href="http://127.0.0.1/Hotel-Reservation/CSS/CancellationPolicy-R/CancellationPolicy.css">
+    <link rel="stylesheet" href="../../ASSET/CSS/CancellationPolicy-R/CancellationPolicy.css">
 </head>
 <body>
     <div class="container">
@@ -72,6 +80,6 @@
             <div id="modify-result" class="result-box"></div>
         </div>
     </div>
-    <script src="http://127.0.0.1/Hotel-Reservation/JS/CancellationPolicy-R/CancellationPolicy.js"></script>
+    <script src="../../ASSET/JS/CancellationPolicy-R/CancellationPolicy.js"></script>
 </body>
 </html>

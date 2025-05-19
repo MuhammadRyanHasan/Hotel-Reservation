@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status'])) 
+    {
+        header('Location:../UserAuthentication-R/Login.html');
+    exit();
+    }
+?>
 <html>
 <head>
     <title>Data Export Tool</title>
