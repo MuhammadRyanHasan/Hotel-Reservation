@@ -35,15 +35,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    displayCaptcha(); // Generate initial captcha
+    displayCaptcha(); 
 
     refreshCaptchaButton.addEventListener('click', displayCaptcha);
 
     contactForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault(); 
 
         if (validateCaptcha()) {
-            // Simulate form submission (replace with actual backend logic)
+            
             console.log('Form submitted!');
             console.log('Name:', document.getElementById('name').value);
             console.log('Email:', document.getElementById('email').value);
@@ -51,20 +51,19 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Subject:', document.getElementById('subject').value);
             console.log('Message:', document.getElementById('message').value);
 
-            // Display submission confirmation
+            
             contactForm.classList.add('hidden');
             submissionConfirmation.classList.remove('hidden');
             submissionMessage.textContent = 'Your inquiry has been submitted successfully. A confirmation email has been sent.'; // Basic client-side message
 
-            // In a real scenario, you would send the form data to a server-side script here
-            // which would handle email sending and data storage.
+            
         }
     });
 
     backToContactButton.addEventListener('click', function() {
         submissionConfirmation.classList.add('hidden');
         contactForm.classList.remove('hidden');
-        contactForm.reset(); // Clear the form
-        displayCaptcha(); // Generate a new captcha
+        contactForm.reset(); 
+        displayCaptcha(); 
     });
 });
