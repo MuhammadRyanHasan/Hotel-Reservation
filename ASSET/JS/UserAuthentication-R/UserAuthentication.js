@@ -1,12 +1,10 @@
 function checkPasswordsMatch() {
     let password = document.getElementById('password').value;
     let confirmPassword = document.getElementById('confirm-password').value;
-
     if (password !== confirmPassword) {
         alert("Error: Passwords do not match!");
         return false;
     }
-
     return true;
 }
 
@@ -81,3 +79,4 @@ function validateForm() {
 }
 
 document.getElementById('signup-form').onsubmit = validateForm;
+
