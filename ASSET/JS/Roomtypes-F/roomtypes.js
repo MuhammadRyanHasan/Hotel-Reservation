@@ -2,30 +2,23 @@ const rooms = [
   {
     name: "Standard Room",
     type: "standard",
-    image: "../../ASSET/images/standard.jpg",
+    image: "/Hotel-Reservation/ASSET/images/standard.jpg",
     description: "A cozy room with essential amenities.",
-    tourLink: "#"
+    tourLink: "/Hotel-Reservation/ASSET/images/standard.jpg"
   },
   {
     name: "Deluxe Room",
     type: "deluxe",
-    image: "https://via.placeholder.com/400x200?text=Deluxe+Room",
+    image: "/Hotel-Reservation/ASSET/images/delux.jpg",
     description: "Spacious room with extra comforts.",
-    tourLink: "#"
+    tourLink: "/Hotel-Reservation/ASSET/images/delux.jpg"
   },
   {
     name: "Suite Room",
     type: "suite",
-    image: "https://via.placeholder.com/400x200?text=Suite+Room",
+    image: "/Hotel-Reservation/ASSET/images/suite.jpg",
     description: "Luxurious suite with premium features.",
-    tourLink: "#"
-  },
-  {
-    name: "Family Suite",
-    type: "suite",
-    image: "https://via.placeholder.com/400x200?text=Family+Suite",
-    description: "Ideal for family stays with full amenities.",
-    tourLink: "#"
+    tourLink: "/Hotel-Reservation/ASSET/images/suite.jpg"
   }
 ];
 
@@ -45,7 +38,7 @@ function renderRooms(type = "all") {
       <div class="info">
         <h3>${room.name}</h3>
         <p>${room.description}</p>
-        <a href="${room.tourLink}" class="tour-btn">360° Tour</a>
+       <a href="#" class="tour-btn" onclick="showTour('${room.image}')">360° Tour</a>
       </div>
     `;
     gallery.appendChild(card);
@@ -59,5 +52,13 @@ buttons.forEach(btn => {
     renderRooms(btn.getAttribute("data-type"));
   });
 });
+
+function showTour(image) {
+  pannellum.viewer('panorama', {
+    "type": "equirectangular",
+    "panorama": image,
+    "autoLoad": true
+  });
+}
 
 renderRooms();
