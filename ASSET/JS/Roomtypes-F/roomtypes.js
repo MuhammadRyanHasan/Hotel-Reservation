@@ -2,7 +2,7 @@ const rooms = [
   {
     name: "Standard Room",
     type: "standard",
-    image: "https://via.placeholder.com/400x200?text=Standard+Room",
+    image: "../../ASSET/images/standard.jpg",
     description: "A cozy room with essential amenities.",
     tourLink: "#"
   },
