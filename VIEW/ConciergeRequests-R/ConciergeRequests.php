@@ -1,54 +1,6 @@
-<?php
-session_start();
-if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status'])) 
-    {
-    header('Location:../UserAuthentication-R/Login.html');
-    exit();
-    }
-?>
 <html>
-<head>
-    <title>Hotel Concierge Requests</title>
-    <link rel="stylesheet" href="../../ASSET/CSS/ConciergeRequests-R/ConciergeRequests.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Concierge Services</h1>
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="service-catalog">Service Catalog</button>
-            <button class="tab-btn" data-tab="request-tracker">Request Tracker</button>
-        </div>
-        <div id="service-catalog" class="tab-content active">
-            <h2>Order Services</h2>
-            <div class="service-options">
-                <div class="service-card" data-service="Room Service">
-                    <h3>Room Service</h3>
-                    <p>Food & beverage delivery to your room</p>
-                    <button class="request-btn">Request</button>
-                </div>
-                <div class="service-card" data-service="Amenities">
-                    <h3>Amenities</h3>
-                    <p>Extra towels, toiletries, etc.</p>
-                    <button class="request-btn">Request</button>
-                </div>
-                <div class="service-card" data-service="Local Experience">
-                    <h3>Local Experiences</h3>
-                    <p>Tours, tickets, reservations</p>
-                    <button class="request-btn">Request</button>
-                </div>
-            </div>
-        </div>
-        <div id="request-tracker" class="tab-content">
-            <h2>Your Requests</h2>
-            <div id="requests-list">
-                <p class="empty-message">No requests yet. Place a request from the Service Catalog.</p>
-            </div>
-        </div>
-        <div id="alert" class="alert hidden">
-            <p>Your request has been received and will be fulfilled shortly!</p>
-            <button id="close-alert">OK</button>
-        </div>
-    </div>
-    <script src="../../ASSET/JS/ConciergeRequests-R/ConciergeRequests.js"></script>
-</body>
+    <title>Construction</title>
+    <body>
+    <p>Still Writing</p>
+    </body>
 </html>
