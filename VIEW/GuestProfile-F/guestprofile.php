@@ -1,9 +1,8 @@
 <?php
+
 require_once('../../CONTROLLER/sessioncheck.php');
 echo "Welcome, " . htmlspecialchars($_SESSION['email']);
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +11,8 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Reservation - Guest Profiles</title>
     <link rel="stylesheet" href="../../ASSET/CSS/GuestProfiles-F/guestprofile.css">
-    
+    <!-- Font Awesome CDN (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -25,7 +25,6 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                 <h3 class="user-name">John Doe</h3>
                 <p class="user-status">Gold Member</p>
             </div>
-            
             <nav class="side-menu">
                 <ul>
                     <li>
@@ -58,13 +57,42 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
 
         <!-- Main Content Area -->
         <main class="main-content">
-            
+            <!-- My Profile Section -->
             <section id="user-profile" class="profile-section">
                 <div class="profile-header">
                     <h2>My Profile</h2>
                     <button class="edit-btn">Edit Profile</button>
                 </div>
-                
+                <!-- Profile Photo Upload Section -->
+                <div class="photo-upload-section">
+                    <div class="current-photo">
+                        <?php if (isset($_SESSION['profile_photo']) && !empty($_SESSION['profile_photo'])): ?>
+                            <img src="../../<?php echo htmlspecialchars($_SESSION['profile_photo']); ?>" alt="Profile Photo" class="profile-photo-large">
+                        <?php else: ?>
+                            <div class="no-photo">
+                                <i class="fas fa-camera"></i>
+                                <p>No photo uploaded</p>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="photo-upload-controls">
+                        <input type="file" id="photo-upload" accept="image/*" style="display:none;">
+                        <button type="button" class="upload-btn" id="upload-btn">
+                            <i class="fas fa-upload"></i> Upload Photo
+                        </button>
+                        <?php if (isset($_SESSION['profile_photo']) && !empty($_SESSION['profile_photo'])): ?>
+                            <button type="button" class="remove-btn" id="remove-photo-btn">
+                                <i class="fas fa-trash"></i> Remove Photo
+                            </button>
+                        <?php endif; ?>
+                        <div class="upload-progress" id="upload-progress" style="display:none;">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <span class="progress-text"></span>
+                        </div>
+                    </div>
+                </div>
                 <div class="profile-details">
                     <div class="detail-row">
                         <span class="detail-label">Full Name:</span>
@@ -113,7 +141,6 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                             <option value="suite">Suite</option>
                         </select>
                     </div>
-                    
                     <div class="form-group">
                         <label>Floor Preference:</label>
                         <div class="radio-group">
@@ -122,7 +149,6 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                             <label><input type="radio" name="floor" value="high"> Higher floors (16+)</label>
                         </div>
                     </div>
-                    
                     <div class="form-group">
                         <label>View Preference:</label>
                         <div class="radio-group">
@@ -131,12 +157,10 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                             <label><input type="radio" name="view" value="ocean"> Ocean View</label>
                         </div>
                     </div>
-                    
                     <div class="form-group">
                         <label for="allergies">Allergies/Special Needs:</label>
                         <textarea id="allergies" name="allergies" placeholder="List any allergies or special needs..."></textarea>
                     </div>
-                    
                     <div class="form-group">
                         <label for="accessibility">Accessibility Requirements:</label>
                         <select id="accessibility" name="accessibility" multiple>
@@ -147,7 +171,6 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                         </select>
                         <small>Hold Ctrl/Cmd to select multiple options</small>
                     </div>
-                    
                     <button type="submit" class="save-btn">Save Preferences</button>
                 </form>
             </section>
@@ -165,9 +188,8 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                             <option value="2021">2021</option>
                         </select>
                     </div>
-                    
                     <div class="history-list">
-                        
+                        <!-- JS -->
                     </div>
                 </div>
             </section>
@@ -181,7 +203,6 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                         <h3>Gold Member</h3>
                         <p>Next tier: Platinum (5,000 more points)</p>
                     </div>
-                    
                     <div class="points-display">
                         <h3>Your Points</h3>
                         <div class="points-meter">
@@ -190,7 +211,6 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                         <p class="points-total">7,500 / 12,500 points</p>
                     </div>
                 </div>
-                
                 <div class="benefits-container">
                     <h3>Your Benefits</h3>
                     <ul class="benefits-list">
@@ -200,7 +220,6 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                         <li>10% discount on dining</li>
                     </ul>
                 </div>
-                
                 <div class="upcoming-rewards">
                     <h3>Upcoming Rewards</h3>
                     <div class="rewards-grid">
@@ -224,7 +243,6 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
             </section>
         </main>
     </div>
-
     <script src="../../ASSET/JS/GuestProfile-F/guestprofile.js"></script>
 </body>
 </html>

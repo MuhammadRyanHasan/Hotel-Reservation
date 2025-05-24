@@ -395,3 +395,182 @@ h2 {
       padding: 1.5rem;
   }
 }
+/* Photo Upload Styles - Add these to your existing guestprofile.css */
+
+/* Profile Image in Sidebar */
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Photo Upload Section */
+.photo-upload-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 2px dashed #ddd;
+  transition: border-color 0.3s;
+}
+
+.photo-upload-section:hover {
+  border-color: #003366;
+}
+
+.current-photo {
+  flex-shrink: 0;
+}
+
+.profile-photo-large {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #003366;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.no-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  border: 2px dashed #ccc;
+}
+
+.no-photo i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.no-photo p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.photo-upload-controls {
+  flex: 1;
+}
+
+.upload-btn, .remove-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.upload-btn {
+  background: #003366;
+  color: white;
+}
+
+.upload-btn:hover {
+  background: #004080;
+  transform: translateY(-1px);
+}
+
+.remove-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.remove-btn:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+}
+
+/* Upload Progress */
+.upload-progress {
+  margin-top: 1rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #003366, #004080);
+  width: 0%;
+  transition: width 0.3s;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Upload Success/Error Messages */
+.upload-message {
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  display: none;
+}
+
+.upload-message.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.upload-message.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Drag and Drop Effect */
+.photo-upload-section.drag-over {
+  border-color: #003366;
+  background: #f0f8ff;
+}
+
+/* Responsive adjustments for photo upload */
+@media (max-width: 768px) {
+  .photo-upload-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .profile-photo-large, .no-photo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .upload-btn, .remove-btn {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}
