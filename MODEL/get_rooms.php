@@ -1,5 +1,5 @@
 <?php
-require_once('dbconnect.php'); // adjust path as needed
+require_once('dbconnect.php'); 
 
 header('Content-Type: application/json');
 

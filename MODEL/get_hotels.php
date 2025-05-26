@@ -1,5 +1,5 @@
 <?php
-require_once('dbconnect.php'); // Adjust path if needed
+require_once('dbconnect.php'); 
 
 header('Content-Type: application/json');
 
@@ -20,7 +20,7 @@ while ($row = $result->fetch_assoc()) {
         'name' => $row['hotel_name'],
         'location' => $row['hotel_location'],
         'rating' => (float)$row['hotel_rating'],
-        // Add more fields if needed
+        
     ];
 }
 echo json_encode($hotels);
