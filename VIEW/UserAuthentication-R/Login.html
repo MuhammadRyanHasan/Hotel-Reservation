@@ -6,15 +6,19 @@
 <body>
   <div id="Login-container">
     <h1>Login</h1>
-    <form id="Login-form" method="post" action="../../CONTROLLER/Auth.php" enctype="">
+    <form id="Login-form" method="post" action="../../CONTROLLER/AuthLog.php">
       <label>Email Address</label>
       <input type="email" id="email" name="email" value="" placeholder="Enter your email" required />
       <label>Password</label>
       <input type="password" id="password" name="password" value="" placeholder="Enter a password" required />
       <a href="SignUp.html">Don't Have an Account? SignUp!</a> <br>
-      <a href="#forgotpass">Forgot password?</a>
-      <button type="submit">Login</button>
+      <a href="ForgotPassword.html">Forgot password?</a>
+      <button type="submit" name="submit" value="submit">Login</button>
+      <table>
+      <tr><td><label">Remember me</label></td><td><input type="checkbox" id="remember" name="remember"></td></tr>
+      </table>
     </form>
   </div>
+  <script src="../../ASSET/JS/UserAuthentication-R/LoginAuth.js"></script>
 </body>
 </html>

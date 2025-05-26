@@ -1,7 +1,6 @@
 function editProfile() {
      document.getElementById('profileView').style.display = 'none';
      document.getElementById('profileEdit').style.display = 'block';
-     document.getElementById('editName').value = document.getElementById('displayName').innerText;
      document.getElementById('editEmail').value = document.getElementById('displayEmail').innerText;
  }
  function saveProfile(){

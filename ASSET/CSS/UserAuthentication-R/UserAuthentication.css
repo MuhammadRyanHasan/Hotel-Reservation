@@ -4,15 +4,13 @@ body
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
-#signup-container, #Login-container {
+#signup-container, #Login-container, #forget-container {
   background-color: white;
   padding: 20px 30px;
-  border: 2px solid #87ceeb;
+  border: 2px #87ceeb;
   border-radius: 8px;
   width: 400px;
-  text-align: center;
 }
 h1 
 {
@@ -20,20 +18,16 @@ h1
 }
 label 
 {
-  display: block;
   text-align: left;
   color: #0099cc;
 }
-
 input {
   width: 100%;
   padding: 8px;
-  margin-bottom: 15px;
   border: 1px solid #87ceeb;
   border-radius: 4px;
   box-sizing: border-box;
 }
-
 button {
   background-color: #0099cc;
   color: white;

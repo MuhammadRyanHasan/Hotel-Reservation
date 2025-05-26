@@ -6,9 +6,11 @@
 <body>
   <div id="signup-container">
     <h1>Registration</h1>
-    <form id="signup-form">
-      <label>Full Name</label>
-      <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required />
+    <form id="signup-form" action="../../CONTROLLER/AuthReg.php" method="post">
+      <label>First Name</label>
+      <input type="text" id="fname" name="fname" placeholder="Enter your First name" required />
+      <label>Last Name</label>
+      <input type="text" id="lname" name="lname" placeholder="Enter your Last name" required />
       <label>Email Address</label>
       <input type="email" id="email" name="email" placeholder="Enter your email" required />
       <label>Password</label>
@@ -16,10 +18,14 @@
       <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required />
       <label>Phone Number</label>
       <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" />
+      <table>
+      <tr><td><label>User</label><input type="radio" name="role" value="User" checked /></td>
+      <td><label>Admin</label><input type="radio" name="role" value="Admin" /></td></tr>
+      </table>
       <a href="Login.html">Already have an account? Login!</a>
-      <button type="submit">Register</button>
+      <button type="submit" name="submit" value="">Register</button>
     </form>
   </div>
-<script src="../../ASSET/JS/UserAuthentication-R/UserAuthentication.js"></script>
+  <script src="../../ASSET/JS/UserAuthentication-R/UserAuthentication.js"></script>
 </body>
 </html>

@@ -9,7 +9,6 @@ body
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 32px;
     border-radius: 22px;
   }
   #logo 
@@ -89,7 +88,6 @@ body
   }
   #about p
  {
-    margin: 0;
     font-size: 16px;
     color: #003366;
     line-height: 1.5;

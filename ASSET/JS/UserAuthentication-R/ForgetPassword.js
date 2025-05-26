@@ -1,6 +1,6 @@
 function checkPasswordsMatch() {
-    let password = document.getElementById('password').value;
-    let confirmPassword = document.getElementById('confirm-password').value;
+    let password = document.getElementById('upassword').value;
+    let confirmPassword = document.getElementById('cpassword').value;
     if (password !== confirmPassword) {
         alert("Error: Passwords do not match!");
         return false;
@@ -57,15 +57,14 @@ function validatePasswordRules(password) {
 }
 
 function validateForm() {
-    let password = document.getElementById('password').value;
+    let password = document.getElementById('upassword').value;
     if (!checkPasswordsMatch()) {
         return false;
     }
     if (!validatePasswordRules(password)) {
         return false;
     }
-    alert("Registration successful!");
+    alert("Password reset successful!");
     return true;
 }
-document.getElementById('signup-form').onsubmit = validateForm;
-
+document.getElementById('forgot-pass').onsubmit = validateForm;

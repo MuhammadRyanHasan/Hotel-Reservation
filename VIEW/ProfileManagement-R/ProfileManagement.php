@@ -14,7 +14,6 @@ if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status']))
  <body>
  <h1>Profile Management</h1>
  <div id="profileView">
-     <p><strong>Name:</strong> <span id="displayName"></span></p>
      <p><strong>Email:</strong> <span id="displayEmail"></span></p>
      <p><img id="profileImage" src="" alt="Profile Image" width="100" height="100"></p>
      <button onclick="editProfile()">Edit Profile</button>
@@ -22,7 +21,6 @@ if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status']))
      <button onclick="changePassword()">Change Password</button>
  </div>
  <div id="profileEdit" style="display:none;">
-     <input type="text" id="editName" placeholder="Name">
      <input type="email" id="editEmail" placeholder="Email">
      <button onclick="saveProfile()">Save Changes</button>
      <button onclick="cancelEdit()">Cancel</button>

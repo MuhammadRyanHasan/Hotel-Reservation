@@ -17,5 +17,22 @@ if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status']))
 <a href="../CancellationPolicy-R/CancellationPolicy.php">CancellationPolicy</a><br>
 <a href="../ConciergeRequests-R/ConciergeRequests.php">ConciergeRequests</a><br>
 <a href="../../CONTROLLER/Logout.php">Logout</a><br>
+<form method="post" action="../../CONTROLLER/Update.php" >
+    Email of user : <input type="text" name="email" value=""/>
+    Update Fname : <input type="text" name="fname" value=""/>
+    <input type="submit" name="submit" value="submit" />
+</form>
+<form method="post" action="../../CONTROLLER/Delete.php" >
+    Delete Fname
+    Email of user : <input type="text" name="email" value=""/>
+    <input type="submit" name="submit" value="submit" />
+</form>
+
+
+
+
+
+
+
 <body>
 </html>
