@@ -4,7 +4,7 @@ session_start();
 // Hardcoded users
 $users = [
     'guest@example.com' => [
-        'password' => '12345678',
+        'password' => '123',
         'role' => 'guest'
     ],
     'admin@example.com' => [
@@ -23,7 +23,7 @@ if (isset($users[$email]) && $users[$email]['password'] === $password) {
     $_SESSION['role'] = $users[$email]['role'];
     
     
-    setcookie("session_expire", time() + 10, time() + 10, "/");
+    setcookie("session_expire", time() + 100, time() + 100, "/");
 
     
     header("Location: ../VIEW/Dashboard-F/hotel_dashboard.php");
