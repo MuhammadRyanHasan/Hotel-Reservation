@@ -117,6 +117,23 @@ tr:hover { background: #f9f9f9; }
 }
 .room-block-actions, .event-actions { display: flex; gap: 0.5rem; }
 
+.logout-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
 @media (max-width: 768px) {
   .gb-form, .room-block-controls, .event-controls,
   .room-block-details, .event-details {

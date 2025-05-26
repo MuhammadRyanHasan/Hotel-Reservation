@@ -70,6 +70,23 @@ th {
 tr:hover {
   background: #f5f7fa;
 }
+.logout-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
 
 @media (max-width: 768px) {
   .hotels-grid, .services-list { grid-template-columns: 1fr; }
