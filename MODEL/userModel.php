@@ -19,7 +19,6 @@ function change($user)
     $con = getConnection();
     $sql = "update users set fname='{$user['fname']}' where email='{$user['email']}'";
     $result = mysqli_query($con, $sql);
-    //$count = mysqli_num_rows($result);
     if($result){
         return true;
     }else{
@@ -32,7 +31,6 @@ function delete($user){
     $con = getConnection();
     $sql = "update users set fname = NULL WHERE email = '{$user['email']}'";
     $result = mysqli_query($con, $sql);
-    //$count = mysqli_num_rows($result);
     if($result){
         return true;
     }else{
