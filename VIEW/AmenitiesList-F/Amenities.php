@@ -5,6 +5,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,22 +36,23 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                     <div class="filter-options">
                         <button class="filter-btn active" data-filter="all">All</button>
                         <button class="filter-btn" data-filter="pool">Pool</button>
-                        <button class="filter-btn" data-filter="spa">Spa</button>
                         <button class="filter-btn" data-filter="gym">Gym</button>
-                        <button class="filter-btn" data-filter="dining">Dining</button>
-                        <button class="filter-btn" data-filter="business">Business</button>
+                        <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+                        <button class="filter-btn" data-filter="wifi">Wifi</button>
+                        <button class="filter-btn" data-filter="tv">TV</button>
+                        <button class="filter-btn" data-filter="ac">Air Conditioning</button>
                     </div>
                 </div>
 
-                <div class="hotels-grid">
-                    <!-- Hotel cards will be inserted here by JavaScript -->
+                <div class="amenities-grid">
+                    <!-- Amenity cards will be inserted here by JavaScript -->
                 </div>
             </section>
 
             <!-- Service Directory Section -->
             <section id="service-directory" class="tab-content">
                 <div class="services-list">
-                    
+                    <!-- Service cards will be inserted here by JavaScript -->
                 </div>
             </section>
 
@@ -67,7 +69,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <!-- Operating hours will be inserted here by JavaScript -->
                         </tbody>
                     </table>
                 </div>
@@ -83,9 +85,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                     <div class="availability-badge" id="availability-badge">Available Now</div>
                 </div>
                 <div class="modal-body">
-                    <div class="amenity-gallery" id="amenity-gallery">
-                        
-                    </div>
+                    <div class="amenity-gallery" id="amenity-gallery"></div>
                     <div class="amenity-info">
                         <h3>Description</h3>
                         <p id="amenity-description"></p>
@@ -98,7 +98,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
             </div>
         </div>
     </div>
-
+    <a href="../../CONTROLLER/Logout_F.php" class="logout-btn">Logout</a>
     <script src="../../ASSET/JS/AmenitiesList-F/Amenities.js"></script>
 </body>
 </html>

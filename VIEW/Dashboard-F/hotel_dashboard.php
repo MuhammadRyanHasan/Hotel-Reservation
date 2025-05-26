@@ -19,6 +19,7 @@
             <a href="../Roomtypes-F/roomtype.php" class="dashboard-link">Search for Rooms</a>
             <a href="../SearchandFilter-F/Search.php" class="dashboard-link">Search for Hotels</a>
             <a href="../AmenitiesList-F/Amenities.php" class="dashboard-link">Search for Amenities</a>
+            <a href="admin_crud.php" class="dashboard-link">Admin CRUD</a>
         </nav>
     </div>
      <div class="side-container">
@@ -29,6 +30,7 @@
             </nav>
         </div>
     </div>
+    <a href="../../CONTROLLER/Logout_F.php" class="logout-btn">Logout</a>
     <script src="../../ASSET/JS/Dashboard-F/dashboard.js"></script>
 </body>
 </html> 

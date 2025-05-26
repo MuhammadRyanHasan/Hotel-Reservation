@@ -188,6 +188,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
       </div>
     </dialog>
   </div>
+  <a href="../../CONTROLLER/Logout_F.php" class="logout-btn">Logout</a>
   <script src="../../ASSET/JS/HouseKeepStat-F/script.js"></script>
 </body>
 </html>

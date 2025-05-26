@@ -243,6 +243,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
             </section>
         </main>
     </div>
+    <a href="../../CONTROLLER/Logout_F.php" class="logout-btn">Logout</a>
     <script src="../../ASSET/JS/GuestProfile-F/guestprofile.js"></script>
 </body>
 </html>

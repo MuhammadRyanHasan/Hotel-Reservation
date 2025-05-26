@@ -1,6 +1,8 @@
 <?php
 require_once('../../CONTROLLER/sessioncheck.php');
 echo "Welcome, " . htmlspecialchars($_SESSION['email']);
+
+$hotelId = isset($_GET['hotel_id']) ? intval($_GET['hotel_id']) : 0;
 ?>
 
 
@@ -47,6 +49,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
       </tbody>
     </table>
   </div>
+  <a href="../../CONTROLLER/Logout_F.php" class="logout-btn">Logout</a>
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
   <script src="../../ASSET/JS/Roomtypes-F/roomtypes.js"></script>

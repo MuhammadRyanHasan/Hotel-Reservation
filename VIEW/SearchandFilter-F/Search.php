@@ -38,6 +38,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
 
     <div id="results" class="results"></div>
   </div>
+  <a href="../../CONTROLLER/Logout_F.php" class="logout-btn">Logout</a>
 
   <script src="../../ASSET/JS/SearchandFilter-F/SearchandFilter.js"></script>
 </body>

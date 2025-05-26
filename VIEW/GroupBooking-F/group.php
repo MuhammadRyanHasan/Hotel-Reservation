@@ -5,9 +5,8 @@
 require_once('../../CONTROLLER/sessioncheck.php');
 
 
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'guest') {
-    
-    echo "Access denied. Guest privileges required.";
+if (!isset($_SESSION['role']) || ($_SESSION['role'] !== 'guest' && $_SESSION['role'] !== 'admin')) {
+    echo "Access denied. Guest or Admin privileges required.";
     exit();
 }
 
@@ -101,6 +100,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
             </section>
 
             <!-- Room Block Tool Tab -->
+             <?php if ($_SESSION['role'] === 'admin'): ?>
             <section id="room-block" class="gb-tab-content">
                 <h2>Room Block Tool</h2>
                 <div class="room-block-controls">
@@ -132,6 +132,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                     </div>
                 </div>
             </section>
+            <?php endif; ?>
 
             <!-- Event Planner Tab -->
             <section id="event-planner" class="gb-tab-content">
@@ -180,6 +181,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
             </section>
         </main>
     </div>
+    <a href="../../CONTROLLER/Logout_F.php" class="logout-btn">Logout</a>
 
     <script src="../../ASSET/JS/GroupBooking-F/group-booking.js"></script>
 </body>
