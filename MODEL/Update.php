@@ -8,7 +8,7 @@ if(isset($_REQUEST['submit'])){
     $user = ['email'=> $email, 'fname'=>$fname];
             $status = change($user);
     if($status){
-        header('Location: ../VIEW/UserAuthentication-R/Login.html');
+        header('Location: ../VIEW/UserAuthentication-R/temp.php');
         exit();
     }
 }

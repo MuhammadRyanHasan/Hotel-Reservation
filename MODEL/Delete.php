@@ -7,7 +7,7 @@ if(isset($_REQUEST['submit'])){
     $user = ['email'=> $email];
             $status = delete($user);
     if($status){
-        header('Location: ../VIEW/UserAuthentication-R/Login.html');
+        header('Location: ../VIEW/UserAuthentication-R/temp.php');
         exit();
     }
 }
