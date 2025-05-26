@@ -25,13 +25,13 @@
 const gallery = document.getElementById("room-gallery");
 const buttons = document.querySelectorAll(".filters button");
 
-// Get hotel_id from URL
+/
 const urlParams = new URLSearchParams(window.location.search);
 const hotelId = urlParams.get('hotel_id');
 
 let rooms = [];
 
-// Fetch rooms for the selected hotel from the database
+
 fetch(`../../MODEL/get_rooms.php?hotel_id=${hotelId}`)
   .then(response => response.json())
   .then(data => {

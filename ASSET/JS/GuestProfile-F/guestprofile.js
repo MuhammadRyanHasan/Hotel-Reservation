@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Tab switching functionality
+  
   const tabs = {
       profile: document.getElementById('profile-tab'),
       preference: document.getElementById('preference-tab'),
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
       loyalty: document.getElementById('loyalty-dashboard')
   };
   
-  // initial active tab
+  
   setActiveTab('preference');
   
   
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
       ];
 
-      // Filter data 
+      
       const filteredData = selectedYear === 'all'
           ? historyData
           : historyData.filter(stay => stay.date.startsWith(selectedYear));
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
   
-  // Form submission for preferences
+  
   const preferenceForm = document.getElementById('preference-form');
   if (preferenceForm) {
       preferenceForm.addEventListener('submit', function(e) {
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Photo upload 
+
 function initPhotoUpload() {
     const uploadBtn = document.getElementById('upload-btn');
     const photoInput = document.getElementById('photo-upload');

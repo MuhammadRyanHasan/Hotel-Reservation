@@ -32,16 +32,12 @@ const amenityFilters = document.querySelectorAll(".filter-amenity");
 function filterHotels() {
   const searchTerm = searchInput.value.toLowerCase();
   
-   //const maxPrice = parseInt(priceFilter.value)? parseInt(priceFilter.value) : Infinity;
-  // const selectedAmenities = Array.from(amenityFilters)
-  //   .filter(cb => cb.checked)
-  //   .map(cb => cb.value);
+   
 
   const filtered = hotels.filter(hotel => {
     const matchesSearch = hotel.name.toLowerCase().includes(searchTerm) ||
                           hotel.location.toLowerCase().includes(searchTerm);
-    //const matchesPrice = hotel.price !== null ? hotel.price <= maxPrice : false;
-     //const matchesAmenities = selectedAmenities.every(amenity => hotel.amenities.includes(amenity));
+  
     return matchesSearch ; 
   });
 
@@ -77,7 +73,7 @@ function showResults(hotelsList) {
   });
 }
 
-// Event listeners
+
 searchInput.addEventListener("input", filterHotels);
 if (priceFilter && priceDisplay) {
   priceFilter.addEventListener("input", () => {
@@ -89,5 +85,5 @@ if (amenityFilters) {
   amenityFilters.forEach(cb => cb.addEventListener("change", filterHotels));
 }
 
-// Initial render
+
 filterHotels();

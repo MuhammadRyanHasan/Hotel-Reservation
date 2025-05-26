@@ -40,8 +40,8 @@ require_once('../../MODEL/admin_crud.php');
         <?php foreach(getHotels() as $hotel): ?>
           <tr>
             <td><?= $hotel['hotel_id'] ?></td>
-            <td><?= htmlspecialchars($hotel['hotel_name']) ?></td>
-            <td><?= htmlspecialchars($hotel['hotel_location']) ?></td>
+            <td><?= $hotel['hotel_name'] ?></td>
+            <td><?= $hotel['hotel_location'] ?></td>
             <td><?= $hotel['hotel_rating'] ?></td>
             <td>
               <form class="inline" method="post">
@@ -54,8 +54,8 @@ require_once('../../MODEL/admin_crud.php');
                 <input type="hidden" name="entity" value="hotel">
                 <input type="hidden" name="action" value="edit">
                 <input type="hidden" name="hotel_id" value="<?= $hotel['hotel_id'] ?>">
-                <input type="text" name="hotel_name" value="<?= htmlspecialchars($hotel['hotel_name']) ?>" required>
-                <input type="text" name="hotel_location" value="<?= htmlspecialchars($hotel['hotel_location']) ?>" required>
+                <input type="text" name="hotel_name" value="<?= $hotel['hotel_name'] ?>" required>
+                <input type="text" name="hotel_location" value="<?= $hotel['hotel_location'] ?>" required>
                 <input type="number" name="hotel_rating" value="<?= $hotel['hotel_rating'] ?>" min="1" max="5" step="0.1" required>
                 <button type="submit">Update</button>
               </form>
@@ -75,7 +75,7 @@ require_once('../../MODEL/admin_crud.php');
         <select name="hotel_id" required>
           <option value="">Select Hotel</option>
           <?php foreach(getHotels() as $hotel): ?>
-            <option value="<?= $hotel['hotel_id'] ?>"><?= htmlspecialchars($hotel['hotel_name']) ?></option>
+            <option value="<?= $hotel['hotel_id'] ?>"><?= $hotel['hotel_name'] ?></option>
           <?php endforeach; ?>
         </select>
         <input type="text" name="room_type" placeholder="Room Type" required>
@@ -91,10 +91,10 @@ require_once('../../MODEL/admin_crud.php');
         <?php foreach(getRooms() as $room): ?>
           <tr>
             <td><?= $room['room_id'] ?></td>
-            <td><?= htmlspecialchars($room['hotel_name']) ?></td>
-            <td><?= htmlspecialchars($room['room_type']) ?></td>
+            <td><?= $room['hotel_name'] ?></td>
+            <td><?= $room['room_type'] ?></td>
             <td><?= $room['room_price'] ?></td>
-            <td><?= htmlspecialchars($room['room_image']) ?></td>
+            <td><?= $room['room_image'] ?></td>
             <td>
               <form class="inline" method="post">
                 <input type="hidden" name="entity" value="room">
@@ -107,14 +107,14 @@ require_once('../../MODEL/admin_crud.php');
                 <input type="hidden" name="action" value="edit">
                 <input type="hidden" name="room_id" value="<?= $room['room_id'] ?>">
                 <select name="hotel_id" required>
-                  <option value="<?= $room['hotel_id'] ?>"><?= htmlspecialchars($room['hotel_name']) ?></option>
+                  <option value="<?= $room['hotel_id'] ?>"><?= $room['hotel_name'] ?></option>
                   <?php foreach(getHotels() as $hotel): if($hotel['hotel_id'] != $room['hotel_id']): ?>
-                    <option value="<?= $hotel['hotel_id'] ?>"><?= htmlspecialchars($hotel['hotel_name']) ?></option>
+                    <option value="<?= $hotel['hotel_id'] ?>"><?= $hotel['hotel_name'] ?></option>
                   <?php endif; endforeach; ?>
                 </select>
-                <input type="text" name="room_type" value="<?= htmlspecialchars($room['room_type']) ?>" required>
+                <input type="text" name="room_type" value="<?= $room['room_type'] ?>" required>
                 <input type="number" name="room_price" value="<?= $room['room_price'] ?>" required>
-                <input type="text" name="room_image" value="<?= htmlspecialchars($room['room_image']) ?>">
+                <input type="text" name="room_image" value="<?= $room['room_image'] ?>">
                 <button type="submit">Update</button>
               </form>
             </td>
@@ -145,11 +145,11 @@ require_once('../../MODEL/admin_crud.php');
         <?php foreach(getAmenities() as $a): ?>
           <tr>
             <td><?= $a['amenities_id'] ?></td>
-            <td><?= htmlspecialchars($a['amenity_name']) ?></td>
-            <td><?= htmlspecialchars($a['amenity_description']) ?></td>
-            <td><?= htmlspecialchars($a['amenities_type']) ?></td>
-            <td><?= htmlspecialchars($a['weekday_hours']) ?></td>
-            <td><?= htmlspecialchars($a['weekend_hours']) ?></td>
+            <td><?= $a['amenity_name'] ?></td>
+            <td><?= $a['amenity_description'] ?></td>
+            <td><?= $a['amenities_type'] ?></td>
+            <td><?= $a['weekday_hours'] ?></td>
+            <td><?= $a['weekend_hours'] ?></td>
             <td>
               <form class="inline" method="post">
                 <input type="hidden" name="entity" value="amenity">
@@ -161,11 +161,11 @@ require_once('../../MODEL/admin_crud.php');
                 <input type="hidden" name="entity" value="amenity">
                 <input type="hidden" name="action" value="edit">
                 <input type="hidden" name="amenities_id" value="<?= $a['amenities_id'] ?>">
-                <input type="text" name="amenity_name" value="<?= htmlspecialchars($a['amenity_name']) ?>" required>
-                <input type="text" name="amenity_description" value="<?= htmlspecialchars($a['amenity_description']) ?>" required>
-                <input type="text" name="amenities_type" value="<?= htmlspecialchars($a['amenities_type']) ?>" required>
-                <input type="text" name="weekday_hours" value="<?= htmlspecialchars($a['weekday_hours']) ?>">
-                <input type="text" name="weekend_hours" value="<?= htmlspecialchars($a['weekend_hours']) ?>">
+                <input type="text" name="amenity_name" value="<?= $a['amenity_name'] ?>" required>
+                <input type="text" name="amenity_description" value="<?= $a['amenity_description'] ?>" required>
+                <input type="text" name="amenities_type" value="<?= $a['amenities_type'] ?>" required>
+                <input type="text" name="weekday_hours" value="<?= $a['weekday_hours'] ?>">
+                <input type="text" name="weekend_hours" value="<?= $a['weekend_hours'] ?>">
                 <button type="submit">Update</button>
               </form>
             </td>

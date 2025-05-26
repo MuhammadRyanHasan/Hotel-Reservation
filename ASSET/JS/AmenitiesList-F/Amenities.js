@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  // Tab functionality (if you use tabs)
+  
   const tabButtons = document.querySelectorAll('.tab-btn');
   const tabContents = document.querySelectorAll('.tab-content');
   tabButtons.forEach(button => {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 
-  // Get hotel_id from URL
+  
   const urlParams = new URLSearchParams(window.location.search);
   const hotelId = urlParams.get('hotel_id');
 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let amenities = [];
 
-  // Fetch amenities for this hotel
+  
   fetch(`../../MODEL/get_hotel_amenities.php?hotel_id=${hotelId}`)
     .then(response => response.json())
     .then(data => {
@@ -37,17 +37,17 @@ document.addEventListener('DOMContentLoaded', function() {
       amenitiesGrid.innerHTML = '<p class="no-results">Error loading amenities.</p>';
     });
 
-  // Example services and operating hours (static)
-  const services = [
-      { name: 'Concierge', icon: 'fas fa-concierge-bell', description: 'Our concierge team can arrange tours, transportation, restaurant reservations and more.' },
-      { name: 'Room Service', icon: 'fas fa-utensils', description: '24-hour room service with an extensive menu available for in-room dining.' },
-      { name: 'Laundry', icon: 'fas fa-tshirt', description: 'Same-day laundry and dry cleaning services available with pickup from your room.' },
-      { name: 'Valet Parking', icon: 'fas fa-parking', description: 'Secure valet parking service available for hotel guests.' },
-      { name: 'Child Care', icon: 'fas fa-baby', description: 'Certified child care services available with advance notice.' },
-      { name: 'Pet Services', icon: 'fas fa-paw', description: 'Pet-friendly accommodations with walking and sitting services available.' }
-  ];
+  
+//   const services = [
+//       { name: 'Concierge', icon: 'fas fa-concierge-bell', description: 'Our concierge team can arrange tours, transportation, restaurant reservations and more.' },
+//       { name: 'Room Service', icon: 'fas fa-utensils', description: '24-hour room service with an extensive menu available for in-room dining.' },
+//       { name: 'Laundry', icon: 'fas fa-tshirt', description: 'Same-day laundry and dry cleaning services available with pickup from your room.' },
+//       { name: 'Valet Parking', icon: 'fas fa-parking', description: 'Secure valet parking service available for hotel guests.' },
+//       { name: 'Child Care', icon: 'fas fa-baby', description: 'Certified child care services available with advance notice.' },
+//       { name: 'Pet Services', icon: 'fas fa-paw', description: 'Pet-friendly accommodations with walking and sitting services available.' }
+//   ];
 
-  // Render amenities with filter
+  
   function renderAmenities(filter = 'all') {
       const amenitiesGrid = document.querySelector('.amenities-grid');
       amenitiesGrid.innerHTML = '';
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
           amenitiesGrid.appendChild(card);
       });
 
-      // Add event listeners to "View Details" buttons
+      
       document.querySelectorAll('.amenities-btn').forEach(button => {
           button.addEventListener('click', () => {
               const amenityName = button.getAttribute('data-amenity-name');
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  // Filter buttons
+  
   document.querySelectorAll('.filter-btn').forEach(button => {
       button.addEventListener('click', () => {
           document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 
-  // Modal functionality
+  
   const modal = document.getElementById('amenity-modal');
   const closeBtn = document.querySelector('.close-btn');
   closeBtn.addEventListener('click', () => { modal.style.display = 'none'; });
@@ -108,24 +108,22 @@ document.addEventListener('DOMContentLoaded', function() {
       const featuresList = document.getElementById('amenity-features');
       const availabilityBadge = document.getElementById('availability-badge');
 
-      // Set modal content
+      
       modalTitle.textContent = amenity.name;
       description.textContent = amenity.description || '';
       availabilityBadge.textContent = 'Available Now';
       availabilityBadge.className = 'availability-badge available';
 
-      // Images (if you add image support in DB)
+      
       gallery.innerHTML = '';
-      // If you add image URLs to your DB, you can loop and display them here
-
-      // Features (if you add features to your DB)
+      
       featuresList.innerHTML = '';
-      // If you add features to your DB, you can loop and display them here
+      
 
       modal.style.display = 'block';
   }
 
-  // Render services
+  
   function renderServices() {
       const servicesList = document.querySelector('.services-list');
       servicesList.innerHTML = '';
@@ -140,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  // Render operating hours from amenities data
+  
   function renderOperatingHours() {
     const tableBody = document.querySelector('.hours-table tbody');
     tableBody.innerHTML = '';
@@ -157,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Initialize the page
+  
   renderServices();
   renderOperatingHours();
 });

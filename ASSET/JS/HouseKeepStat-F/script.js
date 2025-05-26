@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Tab switching functionality
+    
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Sample data for rooms
+    
     const rooms = [
         { number: '101', floor: '1', type: 'Standard', status: 'clean', lastCleaned: '2023-06-15T10:30:00', inspectedBy: 'Maria G.' },
         { number: '102', floor: '1', type: 'Standard', status: 'inspected', lastCleaned: '2023-06-15T09:45:00', inspectedBy: 'John D.' },
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { number: '304', floor: '3', type: 'Suite', status: 'dirty', lastCleaned: '2023-06-14T19:00:00', inspectedBy: '' }
     ];
 
-    // Filter and render logic (placeholder: add real filter UI and rendering functions)
+   
     const roomGrid = document.getElementById('room-grid');
     const floorFilter = document.getElementById('floor-filter');
     const statusFilter = document.getElementById('status-filter');
@@ -80,10 +80,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Initial render
+    
     renderRooms();
 
-    // Filter events
+    
     floorFilter?.addEventListener('change', renderRooms);
     statusFilter?.addEventListener('change', renderRooms);
 });

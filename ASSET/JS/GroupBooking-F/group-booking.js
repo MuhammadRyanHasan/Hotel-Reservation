@@ -1,27 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Tab switching functionality
+  
   const tabButtons = document.querySelectorAll('.tab-btn');
   tabButtons.forEach(button => {
       button.addEventListener('click', function() {
-          // Remove active class from all buttons and tabs
+          
           tabButtons.forEach(btn => btn.classList.remove('active'));
           document.querySelectorAll('.gb-tab-content').forEach(tab => {
               tab.classList.remove('active');
           });
           
-          // Add active class to clicked button and corresponding tab
+          
           this.classList.add('active');
           const tabId = this.getAttribute('data-tab');
           document.getElementById(tabId).classList.add('active');
       });
   });
 
-  // Data storage
+  
   let groups = [];
   let roomBlocks = [];
   let events = [];
 
-  // DOM Elements
+  
   const groupForm = document.getElementById('group-form');
   const groupsTable = document.getElementById('groups-table').getElementsByTagName('tbody')[0];
   const selectGroupDropdowns = document.querySelectorAll('#select-group, #event-group');
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const addEventBtn = document.getElementById('add-event');
   const eventsList = document.getElementById('events-list');
 
-  // Group Form Submission
+  
   groupForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
       groupForm.reset();
   });
 
-  // Render Groups Table
+  
   function renderGroupsTable() {
       groupsTable.innerHTML = '';
       
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  // Delete Group
+  
   function deleteGroup(groupId) {
       groups = groups.filter(group => group.id !== groupId);
       roomBlocks = roomBlocks.filter(block => block.groupId !== groupId);
@@ -93,13 +93,13 @@ document.addEventListener('DOMContentLoaded', function() {
       renderEvents();
   }
 
-  // Update Group Dropdowns
+  
   function updateGroupDropdowns() {
       selectGroupDropdowns.forEach(dropdown => {
-          // Save current value
+          
           const currentValue = dropdown.value;
           
-          // Clear and repopulate
+          
           dropdown.innerHTML = '<option value="">-- Select a group --</option>';
           
           groups.forEach(group => {
@@ -109,14 +109,14 @@ document.addEventListener('DOMContentLoaded', function() {
               dropdown.appendChild(option);
           });
           
-          // Restore selection if still valid
+          
           if (groups.some(group => group.id === currentValue)) {
               dropdown.value = currentValue;
           }
       });
   }
 
-  // Add Room Block
+  
   addRoomBlockBtn.addEventListener('click', function() {
       const groupId = document.getElementById('select-group').value;
       if (!groupId) {
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
       renderRoomBlocks();
   });
 
-  // Render Room Blocks
+  
   function renderRoomBlocks() {
       const selectedGroupId = document.getElementById('select-group').value;
       const filteredBlocks = selectedGroupId 
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
           roomBlocksList.appendChild(blockCard);
       });
       
-      // Add event listeners to new buttons
+      
       document.querySelectorAll('.delete-room-block').forEach(btn => {
           btn.addEventListener('click', function() {
               const blockId = this.getAttribute('data-id');
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  // Add Event
+ 
   addEventBtn.addEventListener('click', function() {
       const groupId = document.getElementById('event-group').value;
       if (!groupId) {
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
       renderEvents();
   });
 
-  // Render Events
+  
   function renderEvents() {
       const selectedGroupId = document.getElementById('event-group').value;
       const filteredEvents = selectedGroupId 
@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
           eventsList.appendChild(eventCard);
       });
       
-      // Add event listeners to new buttons
+      
       document.querySelectorAll('.delete-event').forEach(btn => {
           btn.addEventListener('click', function() {
               const eventId = this.getAttribute('data-id');
@@ -265,13 +265,13 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  // Initialize
+  
   renderGroupsTable();
   updateGroupDropdowns();
   renderRoomBlocks();
   renderEvents();
 
-  // Group selection changes
+  
   document.getElementById('select-group').addEventListener('change', renderRoomBlocks);
   document.getElementById('event-group').addEventListener('change', renderEvents);
 });
