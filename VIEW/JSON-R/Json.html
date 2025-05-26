@@ -1,23 +1,38 @@
 <html>
 <head>
-    <title>Ajax-Jon</title>
+    <title>Ajax-Json-ProfileUpdate</title>
 </head>
 <body>
-        <input type="text" name="username" id="username" value="" />
+        <input type="text" name="name" id="name" placeholder="Name" />
+        <input type="email" name="email" id="email" placeholder="Email" />
+        <input type="password" name="password" id="password" placeholder="Password" />
         <input type="button" name="submit" value="Update" onclick="ajax()" />
+        
+        <div id="default-values">
+            <p>Name: Ryan</p>
+            <p>Email: r@r.com</p>
+            <p>Password: 1234</p>
+        </div>
+        
         <div id="response"></div>
+        
         <script>
             function ajax(){
-                let username = document.getElementById('username').value;
+                let name = document.getElementById('name').value || 'Ryan';
+                let email = document.getElementById('email').value || 'r@r.com';
+                let password = document.getElementById('password').value || '1234';
                 let json = {
-                    'username': username
+                    'name': name,
+                    'email': email,
+                    'password': password
                 }
-                let data  = JSON.stringify(json);
+                let data = JSON.stringify(json);
                 let xhttp = new XMLHttpRequest();
                 xhttp.open('POST', 'update.php', true);
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xhttp.onreadystatechange = function (){
                     if(this.readyState == 4 && this.status == 200){
+                        document.getElementById('default-values').style.display = 'none';
                         document.getElementById('response').innerHTML = this.responseText;
                     }
                 }
