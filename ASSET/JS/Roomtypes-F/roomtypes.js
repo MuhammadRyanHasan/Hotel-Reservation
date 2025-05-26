@@ -1,44 +1,66 @@
-const rooms = [
-  {
-    name: "Standard Room",
-    type: "standard",
-    image: "/Hotel-Reservation/ASSET/images/standard.jpg",
-    description: "A cozy room with essential amenities.",
-    tourLink: "/Hotel-Reservation/ASSET/images/standard.jpg"
-  },
-  {
-    name: "Deluxe Room",
-    type: "deluxe",
-    image: "/Hotel-Reservation/ASSET/images/delux.jpg",
-    description: "Spacious room with extra comforts.",
-    tourLink: "/Hotel-Reservation/ASSET/images/delux.jpg"
-  },
-  {
-    name: "Suite Room",
-    type: "suite",
-    image: "/Hotel-Reservation/ASSET/images/suite.jpg",
-    description: "Luxurious suite with premium features.",
-    tourLink: "/Hotel-Reservation/ASSET/images/suite.jpg"
-  }
-];
+// const rooms = [
+//   {
+//     name: "Standard Room",
+//     type: "standard",
+//     image: "/Hotel-Reservation/ASSET/images/standard.jpg",
+//     description: "A cozy room with essential amenities.",
+//     tourLink: "/Hotel-Reservation/ASSET/images/standard.jpg"
+//   },
+//   {
+//     name: "Deluxe Room",
+//     type: "deluxe",
+//     image: "/Hotel-Reservation/ASSET/images/delux.jpg",
+//     description: "Spacious room with extra comforts.",
+//     tourLink: "/Hotel-Reservation/ASSET/images/delux.jpg"
+//   },
+//   {
+//     name: "Suite Room",
+//     type: "suite",
+//     image: "/Hotel-Reservation/ASSET/images/suite.jpg",
+//     description: "Luxurious suite with premium features.",
+//     tourLink: "/Hotel-Reservation/ASSET/images/suite.jpg"
+//   }
+// ];
 
 const gallery = document.getElementById("room-gallery");
 const buttons = document.querySelectorAll(".filters button");
+
+// Get hotel_id from URL
+const urlParams = new URLSearchParams(window.location.search);
+const hotelId = urlParams.get('hotel_id');
+
+let rooms = [];
+
+// Fetch rooms for the selected hotel from the database
+fetch(`../../MODEL/get_rooms.php?hotel_id=${hotelId}`)
+  .then(response => response.json())
+  .then(data => {
+    rooms = data;
+    renderRooms("all");
+  })
+  .catch(error => {
+    gallery.innerHTML = "<p>Error loading rooms.</p>";
+  });
 
 function renderRooms(type = "all") {
   gallery.innerHTML = "";
 
   const filtered = type === "all" ? rooms : rooms.filter(r => r.type === type);
 
+  if (filtered.length === 0) {
+    gallery.innerHTML = "<p>No rooms found for this hotel.</p>";
+    return;
+  }
+
   filtered.forEach(room => {
     const card = document.createElement("div");
     card.className = "room-card";
     card.innerHTML = `
-      <img src="${room.image}" alt="${room.name}">
+      <img src="../../${room.image}" alt="${capitalize(room.type)} Room">
       <div class="info">
-        <h3>${room.name}</h3>
-        <p>${room.description}</p>
-       <a href="#" class="tour-btn" onclick="showTour('${room.image}')">360° Tour</a>
+        <h3>${capitalize(room.type)} Room</h3>
+        <p>Price: $${room.price}</p>
+        <a href="#" class="tour-btn" onclick="showTour('../../${room.image}');return false;">360° Tour</a>
       </div>
     `;
     gallery.appendChild(card);
@@ -61,4 +83,6 @@ function showTour(image) {
   });
 }
 
-renderRooms();
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
