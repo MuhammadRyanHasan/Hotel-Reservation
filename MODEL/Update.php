@@ -1,14 +1,24 @@
 <?php
+echo "Hello";
+
 require_once('userModel.php'); 
 session_start();
 if(isset($_REQUEST['submit'])){
     $email = trim($_REQUEST['email']);
     $fname = trim($_REQUEST['fname']); 
-     
-    $user = ['email'=> $email, 'fname'=>$fname];
-            $status = change($user);
+    $lname = trim($_REQUEST['lname']);
+    $phone = trim($_REQUEST['phone']);
+    $password = trim($_REQUEST['password']);
+    echo $email;
+    $user = [
+        'email' => $email,
+        'fname' => $fname,
+        'lname' => $lname,
+        'phone' => $phone,
+        'password' => $password];
+        $status = change($user);
     if($status){
-        header('Location: ../VIEW/UserAuthentication-R/temp.php');
+        header('Location: ../VIEW/ProfileManagement-R/ProfileManagement.php');
         exit();
     }
 }

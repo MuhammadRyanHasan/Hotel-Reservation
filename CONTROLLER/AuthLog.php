@@ -15,8 +15,9 @@ if(isset($_REQUEST['submit'])){
             $status = login($user);
     if($status){
         $_SESSION['authenticated'] = true;
+        $_SESSION['email'] = $email;
         setcookie('login_status', 'true', time() + 600, '/');
-        header('Location: ../VIEW/UserAuthentication-R/temp.php');
+        header('Location: ../VIEW/UserAuthentication-R/Dash.php');
         exit();
     } else {
     header('Location: ../VIEW/UserAuthentication-R/Login.html');

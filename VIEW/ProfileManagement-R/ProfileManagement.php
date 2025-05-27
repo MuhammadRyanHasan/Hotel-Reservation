@@ -1,43 +1,81 @@
 <?php
+require_once('../../MODEL/userModel.php'); 
 session_start();
-if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status'])) 
-    {
-        header('Location:../UserAuthentication-R/Login.html');
+if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status'])) {
+    header('Location: Login.html');
     exit();
-    }
+} 
+$email = $_SESSION['email'];
+$useremail = ['email'=> $email];
+$status = mysqli_fetch_assoc(user($useremail));
 ?>
-<html>
- <head>
-     <title>Profile Management</title>
-     <link rel="stylesheet" href="../../ASSET/CSS/ProfileManagement-R/ProfileManagement.css">
- </head>
- <body>
- <h1>Profile Management</h1>
- <div id="profileView">
-     <p><strong>Name:</strong> <span id="displayName"></span></p>
-     <p><strong>Email:</strong> <span id="displayEmail"></span></p>
-     <p><img id="profileImage" src="" alt="Profile Image" width="100" height="100"></p>
-     <button onclick="editProfile()">Edit Profile</button>
-     <button onclick="changeAvatar()">Change Avatar</button>
-     <button onclick="changePassword()">Change Password</button>
- </div>
- <div id="profileEdit" style="display:none;">
-     <input type="text" id="editName" placeholder="Name">
-     <input type="email" id="editEmail" placeholder="Email">
-     <button onclick="saveProfile()">Save Changes</button>
-     <button onclick="cancelEdit()">Cancel</button>
- </div>
- <div id="avatarChange" style="display:none;">
-     <input type="file" id="avatarInput" accept="image/*">
-     <button onclick="uploadAvatar()">Upload and Set Avatar</button>
-     <button onclick="cancelAvatar()">Cancel</button>
- </div>
- <div id="passwordChange" style="display:none;">
-     <input type="password" id="newPassword" placeholder="New Password">
-     <input type="password" id="confirmPassword" placeholder="Confirm Password">
-     <button onclick="updatePassword()">Update Password</button>
-     <button onclick="cancelPassword()">Cancel</button>
- </div>
- <script src="../../ASSET/JS/ProfileManagement-R/ProfileManagement.js"></script>
- </body>
- </html>
+
+
+<?php if ($status) {?>
+    <H1>Profile Information</h1>
+<table border="1"> 
+    <tr>
+        <td>ID</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Password</td>
+        <td>Role</td>
+    </tr>
+    <?php if ($status) { ?>
+    <tr>
+        <td><?php echo $status['user_id']; ?></td>
+        <td><?=$status['fname']?></td>
+        <td><?=$status['lname']?></td>
+        <td><?=$status['email']?></td>
+        <td><?=$status['phone']?></td>
+        <td><?=$status['password']?></td>
+        <td><?=$status['role']?></td>
+    </tr>
+    <?php } ?>
+</table>
+
+<br>
+<form method="post" action="../../MODEL/Update.php">
+    <input type="hidden" name="email" value="<?=$status['email']?>">
+    <h1> Update Profile </h1>
+    <table border="1">
+        <tr>
+            <td>First Name:</td>
+            <td><input type="text" name="fname" value=""></td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td><input type="text" name="lname" value=""></td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td><input type="text" name="phone" value=""></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password" value=""></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button type="submit" name="submit" value="submit">Update</button></td>
+        </tr>
+    </table>
+</form>
+<h1> Delete USER! <h1>
+    <form method="post" action="../../MODEL/Delete.php">
+        <table>
+          <tr>
+            <td><label>Enter Email for Confirmation!</label></td>
+            <td><input type="text" name="email" value=""/></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="submit" name="submit" value="Delete"/>
+            </td>
+          </tr>
+        </table>
+      </form>
+<?php }
+else
+{echo "NO SUCH USERS EXIST!";} ?>
