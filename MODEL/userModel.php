@@ -6,11 +6,7 @@ function login($user){
     $sql = "select * from users where email='{$user['email']}' and password='{$user['password']}'";
     $result = mysqli_query($con, $sql);
     $count = mysqli_num_rows($result);
-
-    if($count == 1){
-        return true;
-    }else{
-        return false;
+    if($count == 1){return true;}else{return false;
     }
 
 }

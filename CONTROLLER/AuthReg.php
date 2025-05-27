@@ -7,6 +7,7 @@ if(isset($_REQUEST['submit'])){
     $lname = trim($_REQUEST['lname']);
     $fname = trim($_REQUEST['fname']);
     $phone = trim($_REQUEST['phone']);
+    $role = trim($_REQUEST['role']);
 
     if (!validatePasswordRules($password)) {
         header('Location: ../VIEW/UserAuthentication-R/Login.html');
@@ -14,7 +15,7 @@ if(isset($_REQUEST['submit'])){
     }
     
     $con = getConnection();
-    $sql = "insert into users values(null, '{$fname}', '{$lname}','{$email}','{$phone}','{$password}')";
+    $sql = "insert into users values(null, '{$fname}', '{$lname}','{$email}','{$phone}','{$password}','{$role}')";
     $result = mysqli_query($con, $sql);
     if($result){
                 header('Location: ../VIEW/UserAuthentication-R/Login.html');
