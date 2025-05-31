@@ -27,10 +27,11 @@ if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status']))
   </tr>
   <tr>
     <td><a href="../ConciergeRequests-R/ConciergeRequests.php">Concierge Requests</a></td>
-    <td><a href="../JSON-R/Json.html">JSON</a></td>
+    <td><a href="../../CONTROLLER/Logout.php">Availability Calendar</a></td>
   </tr>
   <tr>
-    <td colspan="2"><a href="../../CONTROLLER/Logout.php">Logout</a></td>
+    <td> <a href="../../CONTROLLER/Logout.php">Logout</a></td>
+    <td><a href="../JSON-R/Json.html">JSON</a></td>
   </tr>
 <body>
 </html>
