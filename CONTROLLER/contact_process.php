@@ -90,7 +90,7 @@ if (!empty($errors)) {
     exit;
 }
 
-// If validation passes, process the form
+
 try {
     
     
