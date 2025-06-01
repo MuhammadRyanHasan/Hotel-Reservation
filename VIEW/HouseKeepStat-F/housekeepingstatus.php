@@ -26,7 +26,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
+    
     <header class="header" role="banner">
       <h1>Housekeeping Management</h1>
       <nav class="tabs" aria-label="Main Tabs">
@@ -40,9 +40,9 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
       </div>
     </header>
 
-    <!-- Main Content -->
+    
     <main class="main-content" role="main">
-      <!-- Room Status Board -->
+      
       <section id="room-status" class="tab-content active" aria-labelledby="room-status-tab">
         <form class="status-filters" autocomplete="off">
           <div class="filter-group">
