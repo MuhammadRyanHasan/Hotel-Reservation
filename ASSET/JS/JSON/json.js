@@ -1,12 +1,16 @@
 
             function ajax(){
-                let name = document.getElementById('name').value;
+                let fname = document.getElementById('fname').value;
+                let lname = document.getElementById('lname').value;
                 let email = document.getElementById('email').value;
                 let password = document.getElementById('password').value;
+                let tel = document.getElementById('phone').value;
                 let json = {
-                    'name': name,
+                    'fname': fname,
+                    'lname': lname,
                     'email': email,
-                    'password': password
+                    'password': password,
+                    'tel' : tel
                 }
                 let data = JSON.stringify(json);
                 let xhttp = new XMLHttpRequest();
@@ -14,7 +18,6 @@
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xhttp.onreadystatechange = function (){
                     if(this.readyState == 4 && this.status == 200){
-                        document.getElementById('default-values').style.display = 'none';
                         document.getElementById('response').innerHTML = this.responseText;
                     }
                 }

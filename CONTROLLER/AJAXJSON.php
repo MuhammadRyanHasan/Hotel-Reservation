@@ -5,15 +5,19 @@
     $user = json_decode($data);
     $email = trim($user->email);
     $password = trim($user->password);
-    $lname = "JSON Demo LAST NAME!" ;
-    $fname = "JSON Demo FIRST NAME!";
-    $phone = "TELETALK";
-    $role =  "JSON-BUILDER";
+    $lname = $user->lname;
+    $fname = $user->fname;
+    $phone = $user->tel;
+    $role = "Admin";
     $con = getConnection();
     $sql = "insert into users values(null, '{$fname}', '{$lname}','{$email}','{$phone}','{$password}','{$role}')";
     $result = mysqli_query($con, $sql);
     $response = "<h3>Updated Profile:</h3>";
+    $response .= "<p>First Name: ".htmlspecialchars($user->fname)."</p>";
+    $response .= "<p>Last Name: ".htmlspecialchars($user->lname)."</p>";
     $response .= "<p>Email: ".htmlspecialchars($user->email)."</p>";
+    $response .= "<p>Phone: ".htmlspecialchars($user->tel)."</p>";
     $response .= "<p>Password: ".htmlspecialchars($user->password)."</p>";
+    $response .= "<p>Role: ".htmlspecialchars($role)."</p>";
     echo $response;
 ?>

@@ -3,16 +3,41 @@
     <title>Ajax-Json</title>
 </head>
 <body>
-        <input type="text" name="name" id="name" placeholder="Name" />
-        <input type="email" name="email" id="email" placeholder="Email" />
-        <input type="password" name="password" id="password" placeholder="Password" />
-        <input type="button" name="submit" value="Update" onclick="ajax()" />
-        <div id="default-values">
-            <p>Name: Ryan</p>
-            <p>Email: Admin@Admin.com</p>
-            <p>Password: Admin</p>
-        </div>
-        <div id="response"></div>
-        <script src="../../ASSET/JS/JSON/json.js" </script></script>
+    <h1>Update Profile but with AJAX AND JSON</h1>
+    <table border="1">
+        <tr>
+            <td><label>First Name</label></td>
+            <td><input type="text" id="fname" name="fname" placeholder="Enter your First name" required /></td>
+        </tr>
+        <tr>
+            <td><label>Last Name</label></td>
+            <td><input type="text" id="lname" name="lname" placeholder="Enter your Last name" required /></td>
+        </tr>
+        <tr>
+            <td><label>Email Address</label></td>
+            <td><input type="email" id="email" name="email" placeholder="Enter your email" required /></td>
+        </tr>
+        <tr>
+            <td><label>Password</label></td>
+            <td><input type="password" id="password" name="password" placeholder="Enter a password" required /></td>
+        </tr>
+        <tr>
+            <td><label>Confirm Password</label></td>
+            <td><input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required /></td>
+        </tr>
+        <tr>
+            <td><label>Phone Number</label></td>
+            <td><input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required/></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" name="submit" value="Update" onclick="ajax()" />
+            </td>
+        </tr>
+        </table>
+        
+                <div id="response"></div>
+                
+    <script src="../../ASSET/JS/JSON/json.js" </script></script>
 </body>
 </html>
