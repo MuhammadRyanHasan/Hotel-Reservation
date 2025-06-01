@@ -19,7 +19,7 @@
             <a href="../Roomtypes-F/roomtype.php" class="dashboard-link">Search for Rooms</a>
             <a href="../SearchandFilter-F/Search.php" class="dashboard-link">Search for Hotels</a>
             <a href="../AmenitiesList-F/Amenities.php" class="dashboard-link">Search for Amenities</a>
-            <a href="../ContactUsForm-F/contact.html" class="dashboard-link">Contact Us</a>
+            <a href="../ContactUsForm-F/contact.php" class="dashboard-link">Contact Us</a>
             
         </nav>
     </div>
