@@ -1,31 +1,8 @@
-// const rooms = [
-//   {
-//     name: "Standard Room",
-//     type: "standard",
-//     image: "/Hotel-Reservation/ASSET/images/standard.jpg",
-//     description: "A cozy room with essential amenities.",
-//     tourLink: "/Hotel-Reservation/ASSET/images/standard.jpg"
-//   },
-//   {
-//     name: "Deluxe Room",
-//     type: "deluxe",
-//     image: "/Hotel-Reservation/ASSET/images/delux.jpg",
-//     description: "Spacious room with extra comforts.",
-//     tourLink: "/Hotel-Reservation/ASSET/images/delux.jpg"
-//   },
-//   {
-//     name: "Suite Room",
-//     type: "suite",
-//     image: "/Hotel-Reservation/ASSET/images/suite.jpg",
-//     description: "Luxurious suite with premium features.",
-//     tourLink: "/Hotel-Reservation/ASSET/images/suite.jpg"
-//   }
-// ];
 
 const gallery = document.getElementById("room-gallery");
 const buttons = document.querySelectorAll(".filters button");
 
-/
+
 const urlParams = new URLSearchParams(window.location.search);
 const hotelId = urlParams.get('hotel_id');
 

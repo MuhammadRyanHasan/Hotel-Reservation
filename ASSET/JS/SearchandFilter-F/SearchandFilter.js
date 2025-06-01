@@ -1,15 +1,4 @@
-// const hotels = [
-//   { name: "Grand Palace", location: "Mirpur", price: 4000, rating: 4.5, amenities: ["WiFi", "Pool"] },
-//   { name: "Ocean View", location: "Gulshan", price: 15000, rating: 4.0, amenities: ["WiFi"] },
-//   { name: "Mountain Lodge", location: "Banani", price: 10000, rating: 3.5, amenities: ["Breakfast", "Parking"] },
-//   { name: "City Inn", location: "Uttara", price: 3000, rating: 4.1, amenities: ["WiFi", "Breakfast"] },
-//   { name: "Sunset Resort", location: "Mohammadpur", price: 5500, rating: 4.8, amenities: ["WiFi", "Pool", "Parking"] },
-//   { name: "The Pearl", location: "Uttara", price: 9500, rating: 4.5, amenities: ["WiFi", "Breakfast", "Parking"] },
-//   { name: "City Garden", location: "Mohammadpur", price: 8500, rating: 4.2, amenities: ["Breakfast", "Pool", "Parking"] },
-//   { name: "Lakeside Residency", location: "Dhanmondi", price: 10500, rating: 4.5, amenities: ["WiFi", "Pool", "Parking"] },
-//   { name: "Dhaka Palace hotel", location: "Uttor Badda", price: 15000, rating: 4.8, amenities: ["WiFi", "Breakfast", "Parking"] },
-//   { name: "Royal Orchid Inn", location: "Banani", price: 25000, rating: 5.0, amenities: ["WiFi", "Pool", "Parking", "Breakfast"] }
-// ];
+
 
 let hotels = [];
 
