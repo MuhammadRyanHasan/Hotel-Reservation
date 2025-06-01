@@ -21,7 +21,7 @@ require_once('../../MODEL/admin_crud.php');
       <a href="hotel_dashboard.php" style="float:right;">Back to Dashboard</a>
     </header>
 
-    <!-- HOTELS CRUD -->
+    
     <section class="crud-section">
       <h2>Hotels</h2>
       <form method="post">
@@ -66,7 +66,7 @@ require_once('../../MODEL/admin_crud.php');
       </table>
     </section>
 
-    <!-- ROOMS CRUD -->
+    
     <section class="crud-section">
       <h2>Rooms</h2>
       <form method="post">
@@ -124,7 +124,7 @@ require_once('../../MODEL/admin_crud.php');
       </table>
     </section>
 
-    <!-- AMENITIES CRUD -->
+    
     <section class="crud-section">
       <h2>Amenities</h2>
       <form method="post">

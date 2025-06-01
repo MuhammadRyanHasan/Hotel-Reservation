@@ -318,7 +318,7 @@ function uploadPhotoToServer(file) {
         progressFill.style.width = progress + '%';
     }, 200);
 
-    fetch('../../VIEW/GuestProfile-F/upload_photo.php', {
+    fetch('../../CONTROLLER/upload_photo.php', {
         method: 'POST',
         body: formData
     })
@@ -350,7 +350,7 @@ function uploadPhotoToServer(file) {
 }
 
 function removePhoto() {
-    fetch('remove_photo.php', {
+    fetch('../../CONTROLLER/remove_photo.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

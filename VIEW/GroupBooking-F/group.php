@@ -93,7 +93,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Groups will be added here dynamically -->
+                            
                         </tbody>
                     </table>
                 </div>

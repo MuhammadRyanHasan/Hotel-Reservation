@@ -11,8 +11,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Reservation - Guest Profiles</title>
     <link rel="stylesheet" href="../../ASSET/CSS/GuestProfiles-F/guestprofile.css">
-    <!-- Font Awesome CDN (for icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
 </head>
 <body>
     <div class="container">
@@ -55,15 +54,15 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
             </nav>
         </aside>
 
-        <!-- Main Content Area -->
+        
         <main class="main-content">
-            <!-- My Profile Section -->
+            
             <section id="user-profile" class="profile-section">
                 <div class="profile-header">
                     <h2>My Profile</h2>
                     <button class="edit-btn">Edit Profile</button>
                 </div>
-                <!-- Profile Photo Upload Section -->
+                
                 <div class="photo-upload-section">
                     <div class="current-photo">
                         <?php if (isset($_SESSION['profile_photo']) && !empty($_SESSION['profile_photo'])): ?>
@@ -129,7 +128,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                 </div>
             </section>
 
-            <!-- Preference Center Section -->
+            
             <section id="preference-center" class="profile-section active">
                 <h2>Preference Center</h2>
                 <form id="preference-form">
@@ -175,7 +174,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                 </form>
             </section>
 
-            <!-- Stay History Section -->
+            
             <section id="stay-history" class="profile-section">
                 <h2>Stay History</h2>
                 <div class="history-container">
@@ -189,12 +188,12 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                         </select>
                     </div>
                     <div class="history-list">
-                        <!-- JS -->
+                       
                     </div>
                 </div>
             </section>
 
-            <!-- Loyalty Dashboard Section -->
+            
             <section id="loyalty-dashboard" class="profile-section">
                 <h2>Loyalty Dashboard</h2>
                 <div class="loyalty-status">

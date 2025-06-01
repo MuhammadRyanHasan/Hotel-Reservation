@@ -17,7 +17,7 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
+        
         <header class="header">
             <h1>Hotel Amenities</h1>
             <div class="tabs">
@@ -27,9 +27,9 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
             </div>
         </header>
 
-        <!-- Main Content -->
+        
         <main class="main-content">
-            <!-- Facility Explorer Section -->
+            
             <section id="facility-explorer" class="tab-content active">
                 <div class="filter-section">
                     <h3>Filter Amenities</h3>
@@ -45,18 +45,18 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                 </div>
 
                 <div class="amenities-grid">
-                    <!-- Amenity cards will be inserted here by JavaScript -->
+                    
                 </div>
             </section>
 
-            <!-- Service Directory Section -->
+           
             <section id="service-directory" class="tab-content">
                 <div class="services-list">
-                    <!-- Service cards will be inserted here by JavaScript -->
+                    
                 </div>
             </section>
 
-            <!-- Operating Hours Section -->
+            
             <section id="operating-hours" class="tab-content">
                 <div class="hours-table">
                     <table>
@@ -69,14 +69,14 @@ echo "Welcome, " . htmlspecialchars($_SESSION['email']);
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Operating hours will be inserted here by JavaScript -->
+                            
                         </tbody>
                     </table>
                 </div>
             </section>
         </main>
 
-        <!-- Amenity Modal -->
+        
         <div id="amenity-modal" class="modal">
             <div class="modal-content">
                 <span class="close-btn">&times;</span>
