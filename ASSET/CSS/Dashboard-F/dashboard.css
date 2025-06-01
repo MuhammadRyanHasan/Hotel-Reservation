@@ -41,12 +41,7 @@ body {
     font-weight: 500;
     transition: background 0.2s, transform 0.2s;
 }
-.dashboard-link:hover {
-    background: #74b9ff;
-    color: #222;
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 2px 8px rgba(9,132,227,0.12);
-}
+
 .side-container {
     min-width: 260px;
     background: #fff;
@@ -78,12 +73,7 @@ body {
     font-weight: 500;
     transition: background 0.2s, transform 0.2s;
 }
-.side-link:hover {
-    background: #55efc4;
-    color: #222;
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 2px 8px rgba(0,184,148,0.12);
-} 
+
 .logout-btn {
     position: fixed;
     top: 20px;
