@@ -9,6 +9,7 @@ if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status']))
 <html>
 <body>
 <br>
+<H1>DashBoard</h1>
 <table border="1">
   <tr>
     <th colspan="2">Navigation</th>
@@ -23,15 +24,15 @@ if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status']))
   </tr>
   <tr>
     <td><a href="../ReviewSystem-R/ReviewSystem.php">Review System</a></td>
-    <td><a href="../CancellationPolicy-R/CancellationPolicy.php">Cancellation Policy</a></td>
+    <td><a href="../JSON-R/Json.html">Profile Management (AJAX-JSON)</a></td>
   </tr>
   <tr>
     <td><a href="../ConciergeRequests-R/ConciergeRequests.php">Concierge Requests</a></td>
-    <td><a href="../../CONTROLLER/Logout.php">Availability Calendar</a></td>
+    <td><a href="../AvailabilityCalendar-R/AvailabilityCalendar.html">Availability Calendar</a></td>
   </tr>
   <tr>
     <td> <a href="../../CONTROLLER/Logout.php">Logout</a></td>
-    <td><a href="../JSON-R/Json.html">JSON</a></td>
+    <td><a href="../CancellationPolicy-R/CancellationPolicy.php">Cancellation Policy</a></td>
   </tr>
 <body>
 </html>
