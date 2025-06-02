@@ -1,13 +1,12 @@
 <?php
 session_start();
+require_once('../../MODEL/DB.php');
+require_once('../../MODEL/UserModel.php');
 if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status'])) 
     {
     header('Location: Login.html');
     exit();
     }
-    require_once('../../MODEL/DB.php');
-    require_once('../../MODEL/UserModel.php');
-    session_start();
     $data = $_POST['json'];
     $user = json_decode($data);
     $email = trim($user->email);
