@@ -14,7 +14,7 @@
                 }
                 let data = JSON.stringify(json);
                 let xhttp = new XMLHttpRequest();
-                xhttp.open('POST', '../../CONTROLLER/AJAXJSON.php', true);
+                xhttp.open('POST', 'AJAXJSON.php', true);
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xhttp.onreadystatechange = function (){
                     if(this.readyState == 4 && this.status == 200){

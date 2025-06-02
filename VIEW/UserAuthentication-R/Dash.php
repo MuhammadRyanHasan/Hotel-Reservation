@@ -7,6 +7,7 @@ if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status']))
     }
 ?>
 <html>
+  <title>Dash</title>
 <body>
 <br>
 <H1>DashBoard</h1>
@@ -24,7 +25,7 @@ if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status']))
   </tr>
   <tr>
     <td><a href="../ReviewSystem-R/ReviewSystem.php">Review System</a></td>
-    <td><a href="../JSON-R/Json.html">Profile Management (AJAX-JSON)</a></td>
+    <td><a href="../JSON-R/Json.html">Profile (AJAX-JSON)</a></td>
   </tr>
   <tr>
     <td><a href="../ConciergeRequests-R/ConciergeRequests.php">Concierge Requests</a></td>

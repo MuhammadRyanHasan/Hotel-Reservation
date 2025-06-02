@@ -1,6 +1,4 @@
 <?php
-echo "Hello";
-
 require_once('userModel.php'); 
 session_start();
 if(isset($_REQUEST['submit'])){
@@ -9,7 +7,6 @@ if(isset($_REQUEST['submit'])){
     $lname = trim($_REQUEST['lname']);
     $phone = trim($_REQUEST['phone']);
     $password = trim($_REQUEST['password']);
-    echo $email;
     $user = [
         'email' => $email,
         'fname' => $fname,
