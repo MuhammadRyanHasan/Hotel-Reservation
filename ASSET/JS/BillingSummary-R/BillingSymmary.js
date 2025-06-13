@@ -5,9 +5,11 @@ document.querySelectorAll('input[name="split"]').forEach(radio => {
         customSplit.style.display = this.parentElement.textContent.includes('Custom') ? 'block' : 'none';
     });
 });
+
 document.querySelector('.btn-print').addEventListener('click', function() {
     alert('Still Making this option, wait!');
 });
+
 document.querySelector('.btn-email').addEventListener('click', function() {
     alert('Still Making this option, wait!');
 });

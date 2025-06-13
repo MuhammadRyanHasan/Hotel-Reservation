@@ -4,8 +4,6 @@ session_start();
 if(isset($_REQUEST['submit'])){
     $email = trim($_REQUEST['email']);
     $password = trim($_REQUEST['password']);
-
-
     if (!validatePasswordRules($password)) {
         header('Location: ../VIEW/UserAuthentication-R/Login.html');
         exit();

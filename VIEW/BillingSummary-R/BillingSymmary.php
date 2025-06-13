@@ -6,6 +6,7 @@ if (!isset($_SESSION['authenticated']) && !isset($_COOKIE['login_status']))
     exit();
     }
 ?>
+
 <html>
 <head>
     <title>Billing Summary</title>
